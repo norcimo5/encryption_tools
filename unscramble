@@ -1,0 +1,7 @@
+#!/bin/bash
+#set -o xtrace
+echo "[ COPY-PASTE DATA HERE ]"
+cat /dev/stdin  > /tmp/$$.tmp
+cat /tmp/$$.tmp | openssl aes-256-cbc -d -a -salt -out $1
+rm -rf /tmp/$$.tmp > /dev/null
+echo "[ DONE ]"

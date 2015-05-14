@@ -1,0 +1,6 @@
+#!/bin/bash
+#set -o xtrace
+if [[ -f $1 ]] ; then
+  echo "[ DECRYPTING ${1} ]"
+  openssl aes-256-cbc -d -in $1 -out $( basename ${1} .enc )
+fi
